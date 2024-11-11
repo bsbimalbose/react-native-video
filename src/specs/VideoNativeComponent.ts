@@ -328,6 +328,7 @@ export interface VideoNativeProps extends ViewProps {
   filterEnabled?: boolean;
   volume?: Float; // default 1.0
   playInBackground?: boolean;
+  softwareDecode?: boolean;
   preventsDisplaySleepDuringVideoPlayback?: boolean;
   preferredForwardBufferDuration?: Float; //ios, 0
   playWhenInactive?: boolean; // ios, false

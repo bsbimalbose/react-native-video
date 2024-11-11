@@ -284,6 +284,7 @@ export interface ReactVideoProps extends ReactVideoEvents, ViewProps {
   paused?: boolean;
   pictureInPicture?: boolean; // iOS
   playInBackground?: boolean;
+  softwareDecode?: boolean;
   playWhenInactive?: boolean; // iOS
   poster?: string | ReactVideoPoster; // string is deprecated
   /** @deprecated use **resizeMode** key in **poster** props instead */
