@@ -23,6 +23,8 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import androidx.media3.ui.CaptionStyleCompat;
+import android.graphics.Color;
 
 import com.brentvatne.common.api.ResizeMode;
 import com.brentvatne.common.api.SubtitleStyle;
@@ -117,6 +119,15 @@ public final class ExoPlayerView extends FrameLayout implements AdViewProvider {
         // ensure we reset subtitle style before reapplying it
         subtitleLayout.setUserDefaultStyle();
         subtitleLayout.setUserDefaultTextSize();
+        CaptionStyleCompat captionStyle = new CaptionStyleCompat(
+                Color.WHITE,    // Subtitle text color
+                Color.TRANSPARENT,    // Background color (change this to any color)
+                Color.TRANSPARENT, // Window color (transparent to remove window box)
+                CaptionStyleCompat.EDGE_TYPE_OUTLINE, // Edge type for better visibility
+                Color.BLACK,    // Edge color
+                null            // Custom Typeface (null for default)
+            );
+        subtitleLayout.setStyle(captionStyle);
 
         if (style.getFontSize() > 0) {
             subtitleLayout.setFixedTextSize(TypedValue.COMPLEX_UNIT_SP, style.getFontSize());
